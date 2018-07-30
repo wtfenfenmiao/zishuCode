@@ -1,0 +1,9 @@
+P27，文件相关，文件读写，重定向
+数组赋值：memcpy(b,a,sizeof(a))     memcpy(b,a,sizeof(int)*k)  (浮点型int换成double)   记得加上#include <string.h>
+memset(a,0,sizeof(a))，把a的初始值都赋成0
+很多情况下，最好是在做一件事之前检查是不是可以做，而不要做完再后悔，悔棋很麻烦。（比如，先判断，再移动）
+printf输出，fprintf输出到文件，sprintf输出到字符串（后两个代码写法一样）
+strchr在一个字符串中查找单个字符 strchr(s,buff[i])，在s这个字符串中查找buff[i]这个字符
+scanf遇到空格或者tab会停下来
+
+
