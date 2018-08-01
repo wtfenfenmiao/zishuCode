@@ -5,5 +5,6 @@ memset(a,0,sizeof(a))，把a的初始值都赋成0
 printf输出，fprintf输出到文件，sprintf输出到字符串（后两个代码写法一样）
 strchr在一个字符串中查找单个字符 strchr(s,buff[i])，在s这个字符串中查找buff[i]这个字符
 scanf遇到空格或者tab会停下来
+善用常量数组往往能简化代码。定义常量数组时无需指明大小，编译器会计算。（char s[]="1244554657sdfdsfa"这样子。然后如果有超过数组长度的i，s[i]是空，可以用这个判断）
 
 
