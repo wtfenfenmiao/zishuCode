@@ -85,3 +85,37 @@ int main()
     }
     return 0;
 }
+
+
+
+//系统可以提交的
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+#define maxn 1010
+char mirr(char ch,const char* mirror)
+{
+    if(isalpha(ch)) return mirror[ch-'A'];
+    else return mirror[ch-'0'+25];
+}
+
+int main()
+{
+    const char* meg[]={"is not a palindrome.","is a regular palindrome.","is a mirrored string.","is a mirrored palindrome."};
+    const char* mirror="A   3  HIL JM O   2TUVWXY51SE Z  8 ";
+    char s[maxn];
+    while(scanf("%s",s)!=EOF)
+    {
+        int si=strlen(s);
+        int ismirror=1;
+        int ispali=1;
+        for(int i=0;i<(si+1)/2;++i)
+        {
+            if(s[i]!=s[si-1-i]) ispali=0;
+            if(mirr(s[i],mirror)!=s[si-1-i]) ismirror=0;
+        }
+        printf("%s -- %s\n\n",s,meg[ispali+2*ismirror]);
+    }
+    return 0;
+}
+

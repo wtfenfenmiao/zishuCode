@@ -18,3 +18,24 @@ int main()
     printf("\n");
     return 0;
 }
+
+
+//能在Uva系统提交的
+#include<stdio.h>
+int main()
+{
+    char c;
+    bool flag=true;
+    while((c=getchar())!=EOF)
+    {
+        if(c=='"')
+        {
+            printf("%s",flag?"``":"''");
+            flag=!flag;
+        }
+        else
+            printf("%c",c);
+    }
+    return 0;
+}
+
