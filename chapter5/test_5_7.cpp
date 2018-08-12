@@ -1,12 +1,14 @@
-#include<cstdio>
+//思路就是俩队列，一个普通一个优先。注意index的变化，之前死在了index上
+
 #include<queue>
+#include<cstdio>
 #include<iostream>
 
 using namespace std;
 
 int main()
 {
-    //freopen("UVa_sub_in.txt","r",stdin);
+    //freopen("test_5_7_in.txt","r",stdin);
     int kase;
     cin>>kase;
     while(kase--)
@@ -32,18 +34,21 @@ int main()
                     cout<<n-q.size()+1<<endl;
                     break;
                 }
-                --index;
                 q.pop();
                 pq.pop();
+                --index;
             }
             else
             {
-                q.push(q.front());
-                q.pop();
                 if(index==0)
-                    index=q.size()-1;
+                {
+                   index=q.size()-1;
+                }
                 else
                     --index;
+                q.push(q.front());
+                q.pop();
+
             }
         }
     }

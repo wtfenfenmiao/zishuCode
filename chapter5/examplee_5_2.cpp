@@ -1,10 +1,12 @@
 #include<cstdio>
-#include<iostream>
 #include<vector>
+#include<iostream>
 using namespace std;
 #define maxn 30
+
 vector<int> save[maxn];
 int n;
+
 
 void findplace(int num,int &p,int &h)
 {
@@ -43,9 +45,7 @@ void pri()
     {
         printf("%d:",i);
         for(int j=0;j<save[i].size();++j)
-        {
-            printf(" %d",save[i][j]);
-        }
+        printf(" %d",save[i][j]);
         printf("\n");
     }
 }

@@ -1,0 +1,6 @@
+lower_bound  找数组（vector也行）中大于等于一个数的第一个位置，没有就返回最后一个位置
+transform   字符串（能begin end这种的都行）所有字母变大写或者小写
+sort  排序
+map中的count 找这个元素是否出现过（只能是1或者0.这个插入新元素的时候用这个可以不用迭代器）
+string中的to_lower和to_upper，变成大小写
+algorithm这个库很神奇，很多功能都可以去瞅瞅有没有
