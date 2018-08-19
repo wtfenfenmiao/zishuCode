@@ -1,13 +1,12 @@
-#include<iostream>
-#include<cstring>
 #include<cstdio>
+#include<cstring>
+#include<iostream>
 #include<map>
 
 using namespace std;
 
-long long num;
-map<long long,long long> sum_unchange;
-
+map<long long,long long> sum_unchange;  //某个秤砣为基准的总重量：这个重量下能不改重量的秤砣数
+long long sum;   //有多少个秤砣
 
 void dfs(string& str,int s,int e,int depth)
 {
@@ -32,29 +31,30 @@ void dfs(string& str,int s,int e,int depth)
         {
             w=w*10+str[s++]-'0';
         }
-        ++num;
+        ++sum;
         ++sum_unchange[w<<depth];
     }
 }
 
 int main()
 {
-    //freopen("UVa_sub_in.txt","r",stdin);
+    //freopen("test_6_6_in.txt","r",stdin);
     int kase;
     cin>>kase;
     while(kase--)
     {
         sum_unchange.clear();
-        num=0;
+        sum=0;
         string str;
         cin>>str;
         dfs(str,0,str.size()-1,0);
-        int mi=num;
-        for(map<long long,long long>::iterator it=sum_unchange.begin();it!=sum_unchange.end();++it)
+        int mi=sum;
+        for(map<long long,long long>::iterator it=sum_unchange.begin();it!=sum_unchange.end();++it)   //注意这个，类型的问题，int撑不住得long long
         {
-            long long thisnum=it->second;
-            if(num-thisnum<mi)
-                mi=num-thisnum;
+            //cout<<it->first<<" "<<it->second<<endl;
+            int thisnum=it->second;
+            if(sum-thisnum<mi)
+                mi=sum-thisnum;
         }
         cout<<mi<<endl;
     }
